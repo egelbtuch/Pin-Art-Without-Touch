@@ -29,11 +29,13 @@
 * Hot Glue
 
 # What does it do?
-The basketball hoop system does a few things:
+The Pin Art Without Touch system allows a user to draw on a pin art toy without actually touching it:
 
-* The ESP32 controls the "conveyer belt system" which moves the hoop left and right. The hoop does not start moving until the ESP32 (connected to local WIFI) reads "true" from our class web-server/API. Once the ESP32 reads "true" the motors will start moving left and right in a loop until the ESP32 is shutoff or reset. If reset the ESP32 will again look for a "true" string on the web-server/API.
-* One of the Arduino Unos controls the servo motor system which controls the ball shooting system. Once the Arduino is powered on it will continuously read the analog values coming from the potentiometer and move the servo accordingly.
-* The second Arduino Uno controls the scoreboard system. Once the Arduino is powered on it will set the scoreboard to all zeros. It will then add 1 to the scoreboard every time the ball goes through the hoop (hitting a piece of cardboard that is covering the photoresistor). To reset the scoreboard to zeros the user needs to flip the SPDT switch behind the hoop(functioning as a flip flop switch).
+* The ESP32 controls two motors connected to the two corners of the homemade Etch-A-Sketch pulley system/frame
+* The left motor controls the left and right movements of the "cursor" within the frame while the right motor controls the up and down movements of the "cursor" in the frame
+* The ESP32 decides when to turn on each motor and in what direction based on what sensor values it is taking in from the 3D gesture sensor attached to the top of the frame
+* Glued to the "cursor" is a small push-pull solenoid which is used to push the pin art toy's pins that are directly in front of it
+* The pushing of the solenoid is controlled by an Arduino Uno reading input values from a pushbutton located in front of the pin art toy
 
 # Project Overview
 The project consisted of three scripts:
