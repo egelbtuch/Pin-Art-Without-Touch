@@ -2,7 +2,7 @@
 # Materials
 * Arduino Uno
 * ESP32-Wrover-Dev
-* Gravity: PAJ7620U2 3D Gesture Sensor for Arduino
+* Gravity: PAJ7620U2 3D Gesture Sensor
 * Mini Push-Pull Solenoid - 5V
 * L293D IC Chip with a 4-Channel Motor Drive
 * 2 DC Motors
@@ -44,8 +44,8 @@ The project consisted of two scripts:
 * The Arduino script Push_Pull_Solenoid_Pushbutton_Control.ino ran on the Arduino Uno. The script would continuously read the input value coming from the pushbutton. If/when the button was pressed the Arduino Uno would drive the solenoid high putting the solenoid in its "push" state. Then after waiting 1 second the Arduino Uno would drive the solenoid back to its low "pull" state.
 
 # Hardware Configuration
-* I used this [site](https://core-electronics.com.au/tutorials/solenoid-control-with-arduino.html) to steup the push-pull solenoid configuration
-* I used this [site](https://wiki.dfrobot.com/Gravity%3A%20PAJ7620U2%20Gesture%20Sensor%20SKU%3A%20SEN0315) to setup the Gravity: PAJ7620U2 3D Gesture Sensor for Arduino
+* I used this [site](https://core-electronics.com.au/tutorials/solenoid-control-with-arduino.html) to setup the push-pull solenoid configuration
+* I used this [site](https://wiki.dfrobot.com/Gravity%3A%20PAJ7620U2%20Gesture%20Sensor%20SKU%3A%20SEN0315) to setup the Gravity: PAJ7620U2 3D Gesture Sensor
 * I used this [site](https://lastminuteengineers.com/l293d-dc-motor-arduino-tutorial/) to setup the L293D IC Chip to drive/control two dc motors
 
 # Etch-A-Sketch Pulley System & Frame
