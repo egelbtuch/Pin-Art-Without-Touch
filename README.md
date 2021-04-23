@@ -38,11 +38,15 @@ The Pin Art Without Touch system allows a user to draw on a pin art toy without 
 * The pushing of the solenoid is controlled by an Arduino Uno reading input values from a pushbutton located in front of the pin art toy
 
 # Project Overview
-The project consisted of three scripts:
+The project consisted of two scripts:
 
-* The Arduino script Conveyer_Belt.ino that ran on the ESP32 which waited for the class web-server/API to return a string valued "true". I used this [link](https://randomnerdtutorials.com/esp32-http-get-post-arduino/) to setup the WIFI on the ESP32 and to setup the ESP32 for communication with the class web-server/API. Once the ESP32 reads "true" from the web-server/API the motors will start moving left and right in a loop until the ESP32 is shutoff or reset. If reset the ESP32 will again look for a "true" string on the web-server/API.
-* The Arduino script Light_Sensor_and_LEDs.ino that ran on one of the Arduino Unos. The script was used to control the 4-digit 7-segment display(scoreboard) and took in two inputs. One input was from a SPDT switch and the other input was from a photoresistor located in the basket of the hoop. If the state of the switch changed the scoreboard would reset to zeros. The script would also check the analog input coming from the photoresistor and check if it was below a predefined threshold value, which would result in the scoreboard being updated to plus one of the current value(this signified a scored basket). I setup the 4-digit 7-segment display with the help of this [link](https://www.instructables.com/4-Digit-7-Segment-Timer-With-Reset-Button/).
-* The Arduino script Servo-Potentiometer.ino that ran on the other Arduino Uno. It would continuously read the input analog signal from the potentiometer and would translate that value to an angle for the servo to move to.
+* The Arduino script Gesture_Controlled_Motors.ino ran on the ESP32. The script would continuously read the input sensor values coming from the 3D gesture controlled sensor. A sensor value of 1 meant that the ESP32 should drive the left motor to move the cursor right. A sensor value of 2 meant that the ESP32 should drive the left motor to move the cursor left. A sensor value of 4 meant that the ESP32 should drive the right motor to move the cursor up. And a sensor value of 8 meant that the ESP32 should drive the right motor to move the cursor down.
+* The Arduino script Push_Pull_Solenoid_Pushbutton_Control.ino ran on the Arduino Uno. The script would continuously read the input value coming from the pushbutton. If/when the button was pressed the Arduino Uno would drive the solenoid high putting the solenoid in its "push" state. Then after waiting 1 second the Arduino Uno would drive the solenoid back to its low "pull" state.
+
+# Hardware Configuration
+* I used this [site](https://core-electronics.com.au/tutorials/solenoid-control-with-arduino.html) to steup the push-pull solenoid configuration
+* I used this [site](https://wiki.dfrobot.com/Gravity%3A%20PAJ7620U2%20Gesture%20Sensor%20SKU%3A%20SEN0315) to setup the Gravity: PAJ7620U2 3D Gesture Sensor for Arduino
+* I used this [site](https://lastminuteengineers.com/l293d-dc-motor-arduino-tutorial/) to setup the L293D IC Chip to drive/control two dc motors
 
 # Etch-A-Sketch Pulley System & Frame
 In order for this project to work, I had to build a homemade Etch-A-Sketch pulley system and frame. I was able to build one by following this [video](https://www.youtube.com/watch?v=hq3Et9gOISI&t=143s). 
