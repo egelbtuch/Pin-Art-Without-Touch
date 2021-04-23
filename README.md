@@ -45,7 +45,7 @@ The project consisted of three scripts:
 * The Arduino script Servo-Potentiometer.ino that ran on the other Arduino Uno. It would continuously read the input analog signal from the potentiometer and would translate that value to an angle for the servo to move to.
 
 # Etch-A-Sketch Pulley System & Frame
-In order for this project to work, I had to build a homemade Etch-A-Sketch pulley system and frame. I did this by followng this [video](https://www.youtube.com/watch?v=hq3Et9gOISI&t=143s). 
+In order for this project to work, I had to build a homemade Etch-A-Sketch pulley system and frame. I was able to build one by following this [video](https://www.youtube.com/watch?v=hq3Et9gOISI&t=143s). 
 # Technical Issues
 The hardest thing for me was building a "conveyer belt" system that would not fall apart and break every second and one that can hold/balance the weight of the mini hoop! Another issue I had was trying to figure out a way to sense a ball going through the hoop. I ended up using a photoresistor and a piece of cardboard that would cover the photoresistor when a ball went through but this way of sensing was very inconsistent. Finally, I tried using the ESP32 to communicate serially with the Arduino Uno(over their respective serial pins) so the ESP32 could tell the Arduino Uno(does not have WIFI onboard and thus could not read from web-server/API) when the web-server/API read "true". However, this was not working at all so I decided not to do it.
 
