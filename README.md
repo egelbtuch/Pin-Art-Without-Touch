@@ -54,4 +54,4 @@ In order for this project to work, I had to build a homemade Etch-A-Sketch pulle
 The hardest thing for me was building a working and reliable Etch-A-Sketch pulley system and frame that would be able to move a "cursor" with a somewhat heavy push-pull solenoid attached to it. Additionally, when looking up how to wire and power the push-pull solenoid I came across this suggestion on the Adafruit solenoid's product page: "You will need a fairly good power supply to drive a solenoid, as a lot of current will rush into the solenoid to charge up the electro-magnet, about 1 Amp, so be careful of trying to power/activate from a computer's USB." Because of this I decided to use a separate system(Arduino Uno) and power supply to drive the solenoid.
 
 # Video
-A video of my work can be found [here](https://www.youtube.com/watch?v=fLeUoNfXLaA).
+A video of my work can be found [here](https://www.youtube.com/watch?v=l5vPhq5pjL4&t=18s).
